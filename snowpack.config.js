@@ -1,10 +1,12 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: '/',
-    src: '/_dist_',
+    // Same behavior as the "src" example above:
+    src: {url: '/_dist_'},
+    // Mount "public" to the root URL path ("/*") and serve files with zero transformations:
+    public: {url: '/', static: true, resolve: false},
   },
   buildOptions: {
-    baseUrl: '',
+    baseUrl: 'https://kevindur4n.github.io/AvocadoDOM/',
   },
 }
